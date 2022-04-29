@@ -56,6 +56,16 @@ const config = {
     },
   ],
 
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        indexPages: true,
+        hashed: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -76,6 +86,10 @@ const config = {
           {
             href: GH_URL,
             label: "GitHub",
+            position: "right",
+          },
+          {
+            type: "search",
             position: "right",
           },
         ],
