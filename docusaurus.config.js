@@ -49,9 +49,10 @@ const config = {
 
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css",
+      href: "https://unpkg.com/katex@0.15.6/dist/katex.min.css",
       type: "text/css",
-      integrity: "sha256-TThEtR+XalhWKkfF383YLOrI50NGNeIqrzS+q08afrY=",
+      integrity:
+        "sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs",
       crossorigin: "anonymous",
     },
   ],
