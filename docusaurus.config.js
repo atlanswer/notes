@@ -25,6 +25,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: "notes",
+          routeBasePath: "notes",
           sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -62,25 +64,14 @@ const config = {
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         indexPages: true,
+        docsDir: "notes",
+        docsRouteBasePath: "notes",
         hashed: true,
       },
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: "si",
-        sidebarPath: require.resolve("./sidebars.js"),
-        path: 'notes/signal-and-power-integrity',
-        routeBasePath: "si",
-        editUrl: `${GH_URL}/edit/main`,
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      }
-    ],
-  ],
+  plugins: [],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -92,6 +83,12 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
+          {
+            type: "docSidebar",
+            sidebarId: "siSidebar",
+            label: "SI",
+            position: "left",
+          },
           {
             type: "docSidebar",
             sidebarId: "miscSidebar",
@@ -118,7 +115,11 @@ const config = {
             items: [
               {
                 label: "SI",
-                to: "/docs/signal-and-power-integrity/signal-integrity",
+                to: "/notes/si/signal-integrity",
+              },
+              {
+                label: "Misc",
+                to: "/notes/misc/提纲"
               },
             ],
           },
