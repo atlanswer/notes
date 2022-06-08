@@ -4,9 +4,6 @@
 const TITLE = "Notes";
 const GH_URL = "https://github.com/atlanswer/notes";
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: TITLE,
@@ -20,6 +17,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "atlanswer", // Usually your GitHub org/user name.
   projectName: TITLE.toLowerCase(), // Usually your repo name.
+  staticDirectories: ["static"],
 
   presets: [
     [
@@ -49,10 +47,10 @@ const config = {
 
   stylesheets: [
     {
-      href: "https://unpkg.com/katex@0.15.6/dist/katex.min.css",
+      href: "https://unpkg.com/katex@0.16.0/dist/katex.min.css",
       type: "text/css",
       integrity:
-        "sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs",
+        "sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC",
       crossorigin: "anonymous",
     },
   ],
