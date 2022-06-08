@@ -26,6 +26,8 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           // Please change this to your repo.
           editUrl: `${GH_URL}/edit/main`,
           remarkPlugins: [],
@@ -65,7 +67,20 @@ const config = {
     ],
   ],
 
-  plugins: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: "si",
+        sidebarPath: require.resolve("./sidebars.js"),
+        path: 'notes/signal-and-power-integrity',
+        routeBasePath: "si",
+        editUrl: `${GH_URL}/edit/main`,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }
+    ],
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -78,9 +93,9 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "signal-and-power-integrity/signal-integrity",
-            label: "Note",
+            type: "docSidebar",
+            sidebarId: "miscSidebar",
+            label: "Misc",
             position: "left",
           },
           { to: "/blog", label: "Blog", position: "left" },
