@@ -79,8 +79,8 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "intro",
-            label: "Tutorial",
+            docId: "signal-and-power-integrity/signal-integrity",
+            label: "Note",
             position: "left",
           },
           { to: "/blog", label: "Blog", position: "left" },
@@ -99,11 +99,11 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Note",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "SI",
+                to: "/docs/signal-and-power-integrity/signal-integrity",
               },
             ],
           },
