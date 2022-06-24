@@ -91,6 +91,12 @@ const config = {
           },
           {
             type: "docSidebar",
+            sidebarId: "marxSidebar",
+            label: "Marx",
+            position: "left",
+          },
+          {
+            type: "docSidebar",
             sidebarId: "miscSidebar",
             label: "Misc",
             position: "left",
@@ -119,7 +125,7 @@ const config = {
               },
               {
                 label: "Misc",
-                to: "/notes/misc/提纲"
+                to: "/notes/misc/提纲",
               },
             ],
           },
