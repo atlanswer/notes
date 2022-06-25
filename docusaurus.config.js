@@ -124,6 +124,10 @@ const config = {
                 to: "/notes/si/signal-integrity",
               },
               {
+                label: "Marx",
+                to: "/notes/marx/content",
+              },
+              {
                 label: "Misc",
                 to: "/notes/misc/提纲",
               },
