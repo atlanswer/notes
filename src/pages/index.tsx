@@ -16,7 +16,14 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/notes/si/signal-integrity">
+            to="/notes/course/si/review">
+            Web Technologies 🚀
+          </Link>
+        </div>
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/notes/course/si/review">
             Signal and Power Integrity 📶
           </Link>
         </div>

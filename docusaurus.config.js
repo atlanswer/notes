@@ -21,9 +21,9 @@ const config = {
 
   presets: [
     [
-      "@docusaurus/preset-classic",
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           path: "notes",
           routeBasePath: "notes",
@@ -41,20 +41,19 @@ const config = {
           editUrl: `${GH_URL}/edit/main`,
           remarkPlugins: [],
           rehypePlugins: [],
+          postsPerPage: 5,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-      }),
+      },
     ],
   ],
 
   stylesheets: [
     {
-      href: "https://unpkg.com/katex@0.16.0/dist/katex.min.css",
+      href: "https://esm.sh/katex/dist/katex.min.css",
       type: "text/css",
-      integrity:
-        "sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC",
       crossorigin: "anonymous",
     },
   ],
@@ -71,34 +70,53 @@ const config = {
     ],
   ],
 
-  plugins: [],
+  plugins: [
+    async function tailwindCss(context, opts) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(options) {
+          // Appends TailwindCSS and AutoPrefixer.
+          options.plugins.push(require("tailwindcss"));
+          options.plugins.push(require("autoprefixer"));
+          if (process.env.NODE_ENV === "production") {
+            options.plugins.push(require("cssnano"));
+          }
+          return options;
+        },
+      };
+    },
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
         title: TITLE,
+        hideOnScroll: true,
         logo: {
-          alt: "My Site Logo",
+          alt: TITLE,
           src: "img/logo.svg",
+          srcDark: "img/logo.svg",
         },
         items: [
           {
             type: "docSidebar",
-            sidebarId: "siSidebar",
-            label: "SI",
+            sidebarId: "webSidebar",
+            label: "Web",
             position: "left",
           },
           {
             type: "docSidebar",
-            sidebarId: "marxSidebar",
-            label: "Marx",
-            position: "left",
-          },
-          {
-            type: "docSidebar",
-            sidebarId: "miscSidebar",
-            label: "Misc",
+            sidebarId: "courseSidebar",
+            label: "Course",
             position: "left",
           },
           { to: "/blog", label: "Blog", position: "left" },
@@ -120,16 +138,12 @@ const config = {
             title: "Note",
             items: [
               {
-                label: "SI",
-                to: "/notes/si/signal-integrity",
+                label: "Web",
+                to: "/notes/web/jsx",
               },
               {
-                label: "Marx",
-                to: "/notes/marx/content",
-              },
-              {
-                label: "Misc",
-                to: "/notes/misc/提纲",
+                label: "Course",
+                to: "/notes/course/si/review",
               },
             ],
           },
@@ -150,7 +164,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Atlanswer. Built with Docusaurus.`,
       },
       prism: {},
-    }),
+    },
 };
 
 async function createConfig() {
@@ -158,12 +172,13 @@ async function createConfig() {
   const katex = (await import("rehype-katex")).default;
   const lightCodeTheme = require("prism-react-renderer/themes/github");
   const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+  config.presets[0][1].docs.remarkPlugins.push(math);
+  config.presets[0][1].docs.rehypePlugins.push(katex);
+  config.presets[0][1].blog.remarkPlugins.push(math);
+  config.presets[0][1].blog.rehypePlugins.push(katex);
   // @ts-expect-error
-  config.presets[0][1].docs.remarkPlugins.push(math); // @ts-expect-error
-  config.presets[0][1].docs.rehypePlugins.push(katex); // @ts-expect-error
-  config.presets[0][1].blog.remarkPlugins.push(math); // @ts-expect-error
-  config.presets[0][1].blog.rehypePlugins.push(katex); // @ts-expect-error
-  config.themeConfig.prism.theme = lightCodeTheme; // @ts-expect-error
+  config.themeConfig.prism.theme = lightCodeTheme;
+  // @ts-expect-error
   config.themeConfig.prism.darkTheme = darkCodeTheme;
   return config;
 }
