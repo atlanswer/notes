@@ -1,1 +1,0 @@
-# Physical Basis of Resistance

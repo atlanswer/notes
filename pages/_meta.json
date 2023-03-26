@@ -1,0 +1,11 @@
+{
+  "*": {
+    "type": "page"
+  },
+  "index": {
+    "title": "Index",
+    "display": "hidden"
+  },
+  "tips": "Tips",
+  "private": "Private"
+}

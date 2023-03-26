@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(115 115 115 / 1);
+}
+
+::-webkit-scrollbar {
+  @apply h-2 w-2;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-lg bg-neutral-300 dark:bg-neutral-700;
+}
