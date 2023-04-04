@@ -6,11 +6,19 @@ export const AuthWidgetContent = () => {
   const { user, error, isLoading } = useUser();
 
   if (isLoading) {
-    return <span>Loading...</span>;
+    return (
+      <span className="animate-pulse rounded bg-blue-100 px-3 py-1 text-sm text-blue-700 dark:bg-blue-900 dark:text-blue-200">
+        Loading...
+      </span>
+    );
   }
 
   if (error) {
-    return <span className="text-red-500">Error</span>;
+    return (
+      <span className="rounded bg-red-50 px-3 py-1 text-sm text-red-800 dark:bg-gray-800 dark:text-red-400">
+        LOGIN ERROR
+      </span>
+    );
   }
 
   if (user) {
