@@ -1,7 +1,7 @@
 {
   "name": "notes",
   "homepage": "https://notes.waferlab.dev",
-  "version": "0.2.0",
+  "version": "0.3.5",
   "description": "My personal notes.",
   "type": "module",
   "private": "true",
@@ -12,30 +12,35 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
+    "lint": "next lint",
     "build": "next build"
   },
   "author": "Atlanswer",
   "license": "MIT",
   "dependencies": {
-    "@auth0/nextjs-auth0": "^2.4.0",
-    "next": "^13.2.4",
-    "nextra": "^2.3.0",
-    "nextra-theme-docs": "^2.3.0",
+    "@clerk/nextjs": "^4.23.3",
+    "next": "^13.4.19",
+    "nextra": "^2.12.3",
+    "nextra-theme-docs": "^2.12.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sharp": "^0.32.0"
+    "sharp": "^0.32.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.32",
-    "autoprefixer": "^10.4.14",
-    "cssnano": "^6.0.0",
-    "katex": "^0.16.4",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.6",
-    "tailwindcss": "^3.3.1",
-    "typescript": "^5.0.3"
+    "@tsconfig/next": "^2.0.0",
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.21",
+    "autoprefixer": "^10.4.15",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "katex": "^0.16.8",
+    "postcss": "^8.4.28",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   }
 }
