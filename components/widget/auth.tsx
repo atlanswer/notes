@@ -36,7 +36,7 @@ export const AuthWidgetContent = () => {
 
 export const LoginLink = (
   <a
-    className="box-border whitespace-nowrap rounded border border-slate-500 px-2 py-1 text-sm text-gray-600 transition hover:border-sky-800 hover:bg-sky-200 hover:text-sky-800 hover:shadow hover:shadow-sky-200 focus:ring-4 contrast-more:text-gray-700 dark:text-gray-400 dark:hover:border-sky-200 dark:hover:bg-sky-800 dark:hover:text-gray-200 dark:hover:shadow-sky-800 contrast-more:dark:text-gray-100"
+    className="box-border whitespace-nowrap rounded border border-gray-200 px-3 py-1 text-sm text-gray-600 transition hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 contrast-more:text-gray-700 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 contrast-more:dark:text-gray-100"
     href="/api/auth/login"
   >
     Login
