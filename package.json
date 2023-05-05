@@ -1,7 +1,7 @@
 {
   "name": "notes",
   "homepage": "https://notes.waferlab.dev",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "My personal notes.",
   "type": "module",
   "private": "true",
