@@ -23,17 +23,16 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
-      <div className="flex w-full flex-col items-center gap-4 sm:items-start">
-        <p className="">MIT © {new Date().getFullYear()} Atlanswer</p>
-        <div>
+      <div className="nx-flex nx-w-full nx-flex-col nx-items-center nx-gap-4 nx-sm:items-start">
+        <p>MIT © {new Date().getFullYear()} Atlanswer</p>
+        <div className="nx-flex nx-items-center nx-gap-1 nx-text-sm nx-text-current">
+          <span>Powered by</span>
           <a
-            className="flex items-center gap-1 text-sm text-current"
             target="_blank"
             rel="noopener noreferrer"
             title="Vercel homepage"
             href="https://vercel.com"
           >
-            <span>Powered by</span>
             <svg height={20} viewBox="0 0 283 64" fill="none">
               <title>Vercel</title>
               <path
