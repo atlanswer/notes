@@ -1,5 +1,4 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { NavbarItem } from "~/components/navbar/item";
 import { Button } from "../ui/button";
 
 export const LoginButton = () => (
